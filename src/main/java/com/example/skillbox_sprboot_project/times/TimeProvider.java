@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 @Component
 public class TimeProvider implements CommandLineRunner {
 
-    private final TimeService timeService;
+    private final TimeServiceInterface timeService;
     private final TimeProviderProperties timeProviderProperties;
 
     @Value("${spring.application.name}")
@@ -20,7 +20,7 @@ public class TimeProvider implements CommandLineRunner {
     private String welcomeMessage;
 
     @Autowired
-    public TimeProvider(TimeService timeService, TimeProviderProperties timeProviderProperties) {
+    public TimeProvider(TimeServiceInterface timeService, TimeProviderProperties timeProviderProperties) {
         this.timeService = timeService;
         this.timeProviderProperties = timeProviderProperties;
     }
